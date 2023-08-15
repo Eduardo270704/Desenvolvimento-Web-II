@@ -4,20 +4,25 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npx ts-node ./src/index",
-    "dev": "npx ts-node-dev ./src/index"
+    "um": "npx ts-node-dev ./src/exercicio1",
+    "dois": "npx ts-node-dev ./src/exercicio2",
+    "tres": "npx ts-node-dev ./src/exercicio3",
+    "quatro": "npx ts-node-dev ./src/exercicio4"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2"
+  },
   "devDependencies": {
     "@types/express": "^4.17.17",
     "ts-node": "^10.9.1",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.1.6"
   },
-  "dependencies": {
-    "dotenv": "^16.3.1",
+  "dependecies": {
     "express": "^4.18.2"
   }
 }
