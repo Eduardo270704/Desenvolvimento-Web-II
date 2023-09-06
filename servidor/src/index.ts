@@ -1,5 +1,5 @@
 import express from "express";
-import routes from './routes';
+import routes from "./routes";
 import dotenv from "dotenv";
 dotenv.config();
 // será usado 3000 se a variável de ambiente não tiver sido definida
@@ -9,7 +9,7 @@ const app = express(); // cria o servidor e coloca na variável app
 app.use(express.json());
 // inicializa o servidor na porta especificada
 app.listen(PORT, () => {
-    console.log(`Rodando na porta ${PORT}`);
+  console.log(`Rodando na porta ${PORT}`);
 });
 // define a rota para o pacote /routes
 app.use(routes);

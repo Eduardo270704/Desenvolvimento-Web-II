@@ -1,14 +1,20 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Rent } from "./Rent";
 
-
-@Entity({name:"users"})
+@Entity({ name: "users" })
 export class User {
     @PrimaryGeneratedColumn()
-    id:number;
+    id: number;
 
-    @Column({length:50, unique:true})
-    mail:string;
+    @Column({ nullable: false, length: 15, unique: true })
+    alias: string;
 
-    @Column({length:100})
-    password:string;
+    @Column({ nullable: false, length: 50 })
+    mail: string;
+
+    @Column({ nullable: false, length: 20 })
+    phone: string;
+
+    @OneToMany(() => Rent, (rent) => rent.bike)
+    rents: Rent[];
 }
