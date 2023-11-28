@@ -1,5 +1,4 @@
 import Colors from "./Components/colors";
-import ResetButton from "./Components/resetButton";
 import { ColorProvider } from "./contexts/Context";
 
 function App() {
@@ -7,7 +6,6 @@ function App() {
     <div style={{ display: "flex", alignItems: "center" }}>
       <ColorProvider>
         <Colors />
-        <ResetButton />
       </ColorProvider>
     </div>
   );

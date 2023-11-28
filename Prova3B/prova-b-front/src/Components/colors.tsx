@@ -13,8 +13,8 @@ interface StyledColorDivProps extends ColorProps {
 }
 
 const StyledColorDiv = styled.div<StyledColorDivProps>`
-  background: ${(props) => props.background};
-  color: ${(props) => props.color};
+  background: ${(ColorProps) => ColorProps.background};
+  color: ${(ColorProps) => ColorProps.color};
   width: 50px;
   height: 50px;
   margin: 5px;
@@ -26,8 +26,19 @@ const StyledColorDiv = styled.div<StyledColorDivProps>`
   cursor: pointer;
 `;
 
+const StyledButton = styled.button`
+  padding: 10px 15px;
+  font-size: 16px;
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  height: 45px;
+`;
+
 const Colors: React.FC = () => {
-  const { colors, handleClique } = useColor();
+  const { colors, handleClique, resetColors } = useColor();
 
   useEffect(() => {
     console.log("Itens da função list:", colors);
@@ -48,6 +59,7 @@ const Colors: React.FC = () => {
             {color.count}
           </StyledColorDiv>
         ))}
+        <StyledButton onClick={resetColors}>Resetar</StyledButton>
       </StyledDiv>
     </ColorProvider>
   );
