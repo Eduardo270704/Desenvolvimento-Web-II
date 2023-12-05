@@ -23,6 +23,7 @@ export function Provider({ children }: any) {
     } catch (error) {
       console.error("Erro ao criar palavra:", error);
     }
+    window.location.reload();
   };
 
   const remove = async (id: number) => {

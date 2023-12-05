@@ -44,14 +44,15 @@ export default function List() {
       <Provider>
         {words.map((word: WordProps) => (
           <StyledDiv key={word.id}>
-            {word.chars.map((char, index) => (
-              <StyledWordDiv
-                onClick={(e) => handleRemoveCharacter(word.id, index)}
-                key={index}
-              >
-                {char}
-              </StyledWordDiv>
-            ))}
+            {word.chars &&
+              word.chars.map((char, index) => (
+                <StyledWordDiv
+                  onClick={(e) => handleRemoveCharacter(word.id, index)}
+                  key={index}
+                >
+                  {char}
+                </StyledWordDiv>
+              ))}
           </StyledDiv>
         ))}
       </Provider>
